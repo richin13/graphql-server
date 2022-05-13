@@ -1,0 +1,58 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "graphql-server"
+version = "3.0.0b5"
+description = "GraphQL Server tools for powering your server"
+authors = ["Syrus Akbary <me@syrusakbary.com>"]
+readme = "README.md"
+homepage = "https://github.com/graphql-python/graphql-server"
+keywords = ["api", "graphql", "protocol", "rest"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+]
+license = "MIT"
+packages = [
+  { include = "graphql_server" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.6.1"
+graphql-core = "^3.2"
+typing-extensions = "^4"
+aiohttp = {version = "^3.8", optional = true}
+flask = {version = "^1", optional = true}
+quart = {version = "^0.6.15, <0.15", optional = true}
+sanic = {version = "^20.3", optional = true}
+webob = {version = "^1.8.7", optional = true}
+
+[tool.poetry.dev-dependencies]
+Jinja2 = "^2.11"
+black = "^19.10b0"
+check-manifest = "^0.47"
+flake8 = "^4"
+isort = "^5"
+mypy = "^0.950"
+pytest = "^6.2.0"
+pytest-asyncio = "^0.16"
+pytest-cov = "^3"
+MarkupSafe = "^2.0.1"
+tox = "^3.25.0"
+
+[tool.poetry.extras]
+all = ["aiohttp", "flask", "quart", "sanic", "webob"]
+aiohttp = ["aiohttp"]
+flask = ["flask"]
+quart = ["quart"]
+sanic = ["sanic"]
+webob = [ "webob"]
